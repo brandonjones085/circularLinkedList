@@ -11,7 +11,7 @@ It takes in a referense to an int and checks the type and whether it's between 1
 
 void validateMenu(int &i)
 {
-	while (!std::cin || (i < 1 && i > 7))
+	while (!std::cin || (i < 1 && i > 5))
 	{
 		std::cin.clear();
 		std::cin.sync();

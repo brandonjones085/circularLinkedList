@@ -30,6 +30,7 @@ public:
 	Queue();
 	bool isEmpty(); 
 	void printQueue(); 
+	void addNode(int); 
 	~Queue();
 };
 

@@ -16,12 +16,22 @@ int main()
 {
 	std::cout << "\nWelcome to the circular linked list\n\n"; 
 	int num = menu(); 
+	Queue q; 
+
+	
+
 
 	while (num != 5)
 	{
 		if (num == 1)
 		{
-			//Add a value to back of queue
+			//Add a value to backq of queue
+			int in; 
+			std::cout << "\nWhat number would you like to add: "; 
+
+			std::cin >> in; 
+			q.addNode(in); 
+			q.printQueue(); 
 			int num = menu();
 		}
 		else if (num == 2)
@@ -37,6 +47,7 @@ int main()
 		else if (num == 4)
 		{
 			//display the queue's content
+			q.printQueue();
 			int num = menu();
 		}
 
