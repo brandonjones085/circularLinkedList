@@ -1,8 +1,7 @@
 /*******************************************************************************
 ** Author:       Brandon Jones
 ** Date:         05/15/2019
-** Description:  The validateMenu function is usedto validate the user input in the menu function
-It takes in a referense to an int and checks the type and whether it's between 1 and 6.
+** Description:  This is the main file the program is run within. 
 *******************************************************************************/
 
 
@@ -15,7 +14,7 @@ It takes in a referense to an int and checks the type and whether it's between 1
 int main()
 {
 	std::cout << "\nWelcome to the circular linked list\n\n"; 
-	int num = menu(); 
+	int num = menu(); //returns an int
 	Queue q; 
 
 	
