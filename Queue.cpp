@@ -44,12 +44,20 @@ bool Queue::isEmpty()
 void Queue::printQueue()
 {
 	QueueNode* temp = head;
-
-	do 
+	if (isEmpty())
 	{
-		std::cout << temp->val << " "; 
-		temp = temp->next;
-	} while (temp != head);
+		
+		do
+		{
+			std::cout << temp->val << " ";
+			temp = temp->next;
+		} while (temp != head);
+	}
+	else
+	{
+		std::cout << "\n\nCannot print an empty list\n\n"; 
+	}
+	
 }
 
 /*******************************************************************************
@@ -72,6 +80,32 @@ void Queue::setNodeHead(QueueNode* i)
 	}
 }
 
+/*******************************************************************************
+** Description:  Removes the front node of the list. 
+*******************************************************************************/
+void Queue::removeFront()
+{
+
+	QueueNode *prev = head, *firstNode = head; 
+
+	if (!isEmpty())
+	{
+		std::cout << "\n\nThe node cannot be deleted\n\n"; 
+	}
+	else
+	{
+		while (prev->next != head)
+		{
+			prev = prev->next; 
+		}
+		prev->next = firstNode->next; 
+
+		head = prev->next; 
+		delete firstNode; 
+
+	}
+}
+
 
 
 /*******************************************************************************
@@ -83,26 +117,26 @@ void Queue::addNode(int val)
 
 	QueueNode *newVal = (struct QueueNode *)malloc(sizeof(struct QueueNode));
 	newVal->val = val;
-	newVal->next = head;
+	newVal->next = head; //points back to head node
 
 	if (isEmpty())
 	{
 		while (ptr->next != head)
 		{
-			ptr = ptr->next; 
+			ptr = ptr->next;
 		}
-		ptr->next = newVal; 
+		ptr->next = newVal;
 		
 	}
+	//If only a single node
 	else
 	{
-		newVal->next = newVal; 
-		head = newVal; 
-		setNodeHead(head); 
-		
+		newVal->next = newVal;
+		head = newVal;
+		setNodeHead(head);
+
 	}
 }
-
 
 /*******************************************************************************
 ** Description:  Destructor frees all the memory from the queue.
@@ -113,7 +147,7 @@ Queue::~Queue()
 	QueueNode* temp = head; 
 	QueueNode* next; 
 
-	while (temp != nullptr)
+	while (temp != tail->next)
 	{
 		next = temp->next;
 		delete temp; 

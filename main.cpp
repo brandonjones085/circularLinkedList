@@ -31,7 +31,7 @@ int main()
 
 			std::cin >> in; 
 			q.addNode(in); 
-			q.printQueue(); 
+			
 			num = menu();
 		}
 		else if (num == 2)
@@ -44,11 +44,10 @@ int main()
 		else if (num == 3)
 		{
 			//remove the front node
-
-			
-
-
+			q.removeFront(); 
+			//q.printQueue(); 
 			 num = menu();
+
 		}
 		else if (num == 4)
 		{

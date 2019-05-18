@@ -35,7 +35,7 @@ public:
 	void addNode(int); 
 	int getFront(); 
 	void setNodeHead(QueueNode*);
-	int getNodeHead(); 
+	void removeFront(); 
 	~Queue();
 };
 
