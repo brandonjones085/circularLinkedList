@@ -25,6 +25,7 @@ private:
 	QueueNode* head; 
 	QueueNode* tail;
 	QueueNode* n;
+	int nodeHead; 
 
 
 public:
@@ -33,6 +34,8 @@ public:
 	void printQueue(); 
 	void addNode(int); 
 	int getFront(); 
+	void setNodeHead(QueueNode*);
+	int getNodeHead(); 
 	~Queue();
 };
 

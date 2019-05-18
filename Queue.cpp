@@ -57,7 +57,7 @@ void Queue::printQueue()
 *******************************************************************************/
 int Queue::getFront()
 {
-
+	return head->val; 
 }
 
 
@@ -71,16 +71,6 @@ void Queue::setNodeHead(QueueNode* i)
 		head = i; 
 	}
 }
-
-
-/*******************************************************************************
-** Description:  Displays the value of the head pointer node
-*******************************************************************************/
-int Queue::getNodeHead()
-{
-	return head->val; 
-}
-
 
 
 
@@ -108,6 +98,7 @@ void Queue::addNode(int val)
 	{
 		newVal->next = newVal; 
 		head = newVal; 
+		setNodeHead(head); 
 		
 	}
 }

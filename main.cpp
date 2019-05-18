@@ -32,23 +32,29 @@ int main()
 			std::cin >> in; 
 			q.addNode(in); 
 			q.printQueue(); 
-			int num = menu();
+			num = menu();
 		}
 		else if (num == 2)
 		{
 			//Display the front value
-			int num = menu();
+			std::cout << "\n\nThe node head is " << q.getFront() << std::endl;
+
+			num = menu();
 		}
 		else if (num == 3)
 		{
 			//remove the front node
-			int num = menu();
+
+			
+
+
+			 num = menu();
 		}
 		else if (num == 4)
 		{
 			//display the queue's content
 			q.printQueue();
-			int num = menu();
+			 num = menu();
 		}
 
 	}
