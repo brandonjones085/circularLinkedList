@@ -27,12 +27,12 @@ bool Queue::isEmpty()
 	if (head == nullptr)
 	{
 		//if head is empty
-		return true; 
+		return false;
 	}
 	else
 	{
 		//list not empty
-		return false; 
+		return true; 
 	}
 }
 
@@ -45,12 +45,43 @@ void Queue::printQueue()
 {
 	QueueNode* temp = head;
 
-	while (temp != nullptr)
+	do 
 	{
 		std::cout << temp->val << " "; 
 		temp = temp->next;
+	} while (temp != head);
+}
+
+/*******************************************************************************
+** Description:  Displays the first value in the linked list
+*******************************************************************************/
+int Queue::getFront()
+{
+
+}
+
+
+/*******************************************************************************
+** Description:  Takes in a QueueNode pointer and sets it as the head
+*******************************************************************************/
+void Queue::setNodeHead(QueueNode* i)
+{
+	if (i != nullptr)
+	{
+		head = i; 
 	}
 }
+
+
+/*******************************************************************************
+** Description:  Displays the value of the head pointer node
+*******************************************************************************/
+int Queue::getNodeHead()
+{
+	return head->val; 
+}
+
+
 
 
 /*******************************************************************************
@@ -58,20 +89,26 @@ void Queue::printQueue()
 *******************************************************************************/
 void Queue::addNode(int val)
 {
+	QueueNode *ptr = head;
+
+	QueueNode *newVal = (struct QueueNode *)malloc(sizeof(struct QueueNode));
+	newVal->val = val;
+	newVal->next = head;
+
 	if (isEmpty())
 	{
-		head = new QueueNode(val); 
-		
+		while (ptr->next != head)
+		{
+			ptr = ptr->next; 
+		}
+		ptr->next = newVal; 
 		
 	}
 	else
 	{
-		QueueNode *ptr = head; 
-		while (ptr->next != nullptr)
-		{
-			ptr = ptr->next; 
-		}
-		ptr->next = new QueueNode(val); 
+		newVal->next = newVal; 
+		head = newVal; 
+		
 	}
 }
 

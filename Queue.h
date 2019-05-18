@@ -15,6 +15,7 @@ private:
 		int val; 
 		QueueNode* next = nullptr; 
 		QueueNode* prev = nullptr; 
+		QueueNode(); 
 		QueueNode(int in)
 		{
 			val = in; 
@@ -31,6 +32,7 @@ public:
 	bool isEmpty(); 
 	void printQueue(); 
 	void addNode(int); 
+	int getFront(); 
 	~Queue();
 };
 
